@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* ShowList CSS */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+
+.shows-lists {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.shows-list {
+    margin-bottom: 60px;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.shows-list img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.shows-list:hover img {
+    opacity: 0.8;
+}
+
+.shows-list p {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.shows-list button, .show-details button {
+    background-color: #008cba;
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    margin: 0px auto 15px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ShowDetail CSS */
+.detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show img {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.show-info {
+  margin-top: 40px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.show-info p {
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.show-info p span {
+  background-color: rgb(135, 243, 207);
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.loading {
+  font-size: 50px;
+  font-weight: 700;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .shows-list {
+      width: 45%;
+  }
+
+  .show img {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shows-list, .show img {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .show {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .show-info {
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+}
+
