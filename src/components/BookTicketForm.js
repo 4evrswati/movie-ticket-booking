@@ -9,7 +9,7 @@ const BookTicketForm = () => {
     const [bookingDate, setBookingDate] = useState("")
     const [bookingTime, setBookingTime] = useState("")
     const [bookingPlace, setBookingPlace] = useState("")
-    const [price, setPrice] = useState(500)
+    const ticketPrice = 500
 
     const bookTicket = (e) => {
         e.preventDefault();
@@ -20,7 +20,7 @@ const BookTicketForm = () => {
             bookingDate,
             bookingTime,
             bookingPlace,
-            price,
+            ticketPrice,
           };
       
           // Store data in local storage
@@ -104,7 +104,7 @@ const BookTicketForm = () => {
                 <input
                     type="numeric"
                     name="price"
-                    value={price}
+                    value={ticketPrice}
                 />
                 <br />
                 <div className='form-group'>
