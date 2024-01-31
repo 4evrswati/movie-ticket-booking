@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ShowDetails = () => {
 
     const {showId} = useParams();
+    const navigate = useNavigate();
     const [show, setShow] = useState(null);
 
     useEffect(() => {
@@ -20,6 +21,10 @@ const ShowDetails = () => {
         fetchData();
         // eslint-disable-next-line
     }, [showId])
+
+    const handleBooking = () => {
+        navigate(`/book-ticket/${show.name}`)
+    }
 
   return (
     <>
@@ -45,7 +50,9 @@ const ShowDetails = () => {
                 <p>
                     <span>Summary :</span>  <p dangerouslySetInnerHTML={{ __html: show.summary }} /> 
                 </p>
-                <button>Book Ticket</button>
+                <button onClick={handleBooking}>
+                    Book Ticket 
+                </button>
             </div>
         </div>
       </section>
